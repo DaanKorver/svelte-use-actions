@@ -8,16 +8,15 @@ const defaultOptions: KeyPressOptions = {
 
 interface IKeyPress {
 	key: string;
-	callback: () => void;
 	options?: KeyPressOptions;
 }
 
 export const keypress = (node: HTMLElement, params: IKeyPress) => {
-	const { key, callback, options } = params;
+	const { key, options } = params;
 	const _options = { ...defaultOptions, ...options };
 	const cb = (e: KeyboardEvent) => {
 		if (e.key !== key) return;
-		callback();
+		node.dispatchEvent(new CustomEvent('usekeypress'));
 	};
 	node.addEventListener(_options.event, cb);
 	return {

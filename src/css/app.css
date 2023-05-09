@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: var(--dark);
+	color: var(--white);
+	font-family: 'Inter';
+}
+
+body > div {
+	display: grid;
+	grid-template-rows: 70px auto;
+	grid-template-columns: 20rem 1fr 15rem;
+	gap: 1rem;
+	justify-content: center;
+	align-items: start;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-inline: 1rem;
+	padding-block: 1rem;
+}
+
+a,
+a:visited {
+	color: var(--white);
+}
+
+a {
+	text-decoration: none;
+	transition: 100ms color ease-out;
+}
+
+a:hover,
+a:focus,
+a.active {
+	color: var(--accent);
+}
